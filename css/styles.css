@@ -177,7 +177,7 @@ body{
 
 }
 
-.productos-container{
+#productos{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -281,4 +281,7 @@ body{
     display: inline-block;
     padding: 0 15px;
   }
+  
+
+
   
