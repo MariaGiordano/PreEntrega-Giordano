@@ -85,13 +85,32 @@
         </div>
       </section>
 
+      <section>
+        <label for="tipoPiel" class="tipoPielTitulo">¿Qué tipo de<span> piel</span> tenes?</label>
+        <select id="tipoPiel">
+          <option value="Normal">Normal</option>
+          <option value="Grasa">Grasa</option>
+          <option value="Sensible">Sensible</option>
+        </select>
+        <p id="recomendacion"></p>
+    </section>
+
       <section> 
         <div class="titulo-productos">
         <h1>Obtené tu <span>Glowy</span> con nuestros productos.</h1>
-      </div>
-    </section>
+      </div>     
         <section id="productos"></section>
-         <section id="carrito"></section>
+        <section id="carrito"></section>
+    </section>
+
+    <section id="newsletter">
+      <h3>Suscríbete para recibir ofertas exclusivas</h3>
+      <form id="form-suscripcion">
+        <input type="email" id="email-input" placeholder="Ingrese su email" required>
+        <button type="submit">Suscribirse</button>
+      </form>
+    </section>
+    
     </main>
 
     <footer class="footer">

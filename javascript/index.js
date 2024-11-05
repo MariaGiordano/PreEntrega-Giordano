@@ -1,4 +1,3 @@
- //carrito de compras. suma y resta.
  const PRODUCTOS_ARRAY =[
     {
         id: 1,
@@ -86,33 +85,33 @@ function mostrarCarrito(){
 
 mostrarProductos();
 
-//PreEntrega1
-let email;
-do {
-email = prompt("Ingrese su email para recibir ofertas exclusivas:");
-if (!email.includes("@")) {
-alert("Por favor, ingrese un email válido.");
-}
-} while (!email.includes("@"));
 
-alert("Gracias por registrarse. Le enviaremos nuestras mejores ofertas a " + email + ".");
+document.addEventListener("DOMContentLoaded", function() {
+    const selectTipoPiel = document.getElementById("tipoPiel");
+    selectTipoPiel.addEventListener("change", mostrarRecomendacion);
+});
 
-let tipoPiel  = (prompt("Ingrese su tipo de piel"));
-if(tipoPiel === "Normal"){
-    console.log("Te recomendamos productos hidratantes y protector solar");
-}else if (tipoPiel === "Grasa") { 
-    console.log("Te recomendamos productos control de brillo y limpieza profunda");
-} else if (tipoPiel === "Sensible") { 
-    console.log("Te recomendamos productos suaves y hipoalergénicos");
-} else {
-    console.log("Te recomendamos consultar con un experto en belleza");
-  }
+function mostrarRecomendacion() {
+    const tipoPiel = document.getElementById("tipoPiel").value;
+    const RECOMENDACION_ELEMENT = document.getElementById("recomendacion");
 
-function aplicarDescuento(){
-console.log("Tu código de descuento para tu próxima compra es 123");
+    if (tipoPiel === "Normal") {
+        RECOMENDACION_ELEMENT.textContent = "Te recomendamos productos hidratantes y protector solar";
+    } else if (tipoPiel === "Grasa") {
+        RECOMENDACION_ELEMENT.textContent = "Te recomendamos productos control de brillo y limpieza profunda";
+    } else if (tipoPiel === "Sensible") {
+        RECOMENDACION_ELEMENT.textContent = "Te recomendamos productos suaves y hipoalergénicos";
+    }
 }
 
-aplicarDescuento();
-
+document.getElementById("form-suscripcion").addEventListener("submit", function() {
+    const email = document.getElementById("email-input").value;
+    if (email.includes("@")) {
+        alert("Gracias por suscribirte! Te enviaremos nuestras ofertas.");
+        localStorage.setItem("suscriptorEmail", email);
+    } else {
+        alert("Por favor ingresa un email válido.");
+    }
+});
 
 
